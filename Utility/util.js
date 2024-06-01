@@ -18,6 +18,13 @@ function getBencodedValueType(value) {
     else if(value[0] == 'l') {
         return BencodedValueTypes.LIST;
     }
+    // Check if the first character is a dictionary
+    else if(value[0] == 'd') {
+        return BencodedValueTypes.DICTIONARY;
+    }
+    else {
+        throw new Error("Unsupported value type");
+    }
 }
 
 module.exports = {
