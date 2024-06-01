@@ -9,8 +9,14 @@ function getBencodedValueType(value) {
     // Check if the first character is a digit
     if(!isNaN(value[0])) {
         return BencodedValueTypes.STRING;
-    } else if(value[0] == 'i') {
+    }
+    // Check if the first character is an integer
+    else if(value[0] == 'i') {
         return BencodedValueTypes.NUMBER;
+    }
+    // Check if the first character is a list
+    else if(value[0] == 'l') {
+        return BencodedValueTypes.LIST;
     }
 }
 
