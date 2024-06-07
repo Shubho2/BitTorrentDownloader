@@ -8,6 +8,8 @@ if (command === "decode") {
   CommandHandler.infoCommand(process.argv[3]);
 } else if (command === "peers") {
   CommandHandler.peersCommand(process.argv[3]);
+} else if (command === "handshake") {
+  CommandHandler.handshakeCommand(process.argv[3], process.argv[4]);
 } else {
   throw new Error(`Unknown command ${command}`);
 }
