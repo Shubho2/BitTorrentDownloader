@@ -1,15 +1,19 @@
-const CommandHandler = require("../lib/CommandHandler");
+const CommandHandler = require("../lib");
 
 const command = process.argv[2];
+let arg = process.argv.slice(3);
 
 if (command === "decode") {
-  CommandHandler.decodeCommand(process.argv[3]);
+  CommandHandler.decodeCommand(...arg);
 } else if (command === "info") {
-  CommandHandler.infoCommand(process.argv[3]);
+  CommandHandler.infoCommand(...arg);
 } else if (command === "peers") {
-  CommandHandler.peersCommand(process.argv[3]);
+  CommandHandler.peersCommand(...arg);
 } else if (command === "handshake") {
-  CommandHandler.handshakeCommand(process.argv[3], process.argv[4]);
+  CommandHandler.handshakeCommand(...arg);
+} else if (command === "download_piece") {
+  arg = arg.slice(1);
+  CommandHandler.downloadPieceCommand(...arg);
 } else {
   throw new Error(`Unknown command ${command}`);
 }
