@@ -14,6 +14,9 @@ if (command === "decode") {
 } else if (command === "download_piece") {
   arg = arg.slice(1);
   CommandHandler.downloadPieceCommand(...arg);
+} else if (command === "download") {
+  arg = arg.slice(1);
+  CommandHandler.downloadCommand(...arg);
 } else {
   throw new Error(`Unknown command ${command}`);
 }
