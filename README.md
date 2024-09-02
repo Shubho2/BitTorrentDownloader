@@ -1,35 +1,8 @@
-[![progress-banner](https://backend.codecrafters.io/progress/bittorrent/1ee8e4ec-a138-4924-8438-fe6675bafe26)](https://app.codecrafters.io/users/Shubho2?r=2qF)
+# Introduction
+A simple BitTorrent downloader to download a file using torrent information. This project implements Bencoder and BenDecoder for Bencoded torrent files. It also uses the NodeJS [worker threads](https://nodejs.org/api/worker_threads.html) to download multiple parts of a file simultaneously.
 
-This is a starting point for JavaScript solutions to the
-["Build Your Own BitTorrent" Challenge](https://app.codecrafters.io/courses/bittorrent/overview).
-
-In this challenge, you’ll build a BitTorrent client that's capable of parsing a
-.torrent file and downloading a file from a peer. Along the way, we’ll learn
-about how torrent files are structured, HTTP trackers, BitTorrent’s Peer
-Protocol, pipelining and more.
-
-**Note**: If you're viewing this repo on GitHub, head over to
-[codecrafters.io](https://codecrafters.io) to try the challenge.
-
-# Passing the first stage
-
-The entry point for your BitTorrent implementation is in `app/main.js`. Study
-and uncomment the relevant code, and push your changes to pass the first stage:
-
-```sh
-git add .
-git commit -m "pass 1st stage" # any msg
-git push origin master
-```
-
-Time to move on to the next stage!
-
-# Stage 2 & beyond
-
-Note: This section is for stages 2 and beyond.
-
-1. Ensure you have `node (18)` installed locally
-1. Run `./your_bittorrent.sh` to run your program, which is implemented in
+## How to build and run this project
+* Ensure you have `node (18)` installed locally
+* Run `./your_bittorrent.sh <command> <args>}` to run your program, which is implemented in
    `app/main.js`.
-1. Commit your changes and run `git push origin master` to submit your solution
-   to CodeCrafters. Test output will be streamed to your terminal.
+Note: Available commands: decode, info, peers, handshake, download
